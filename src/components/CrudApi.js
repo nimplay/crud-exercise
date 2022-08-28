@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
+import { helpHttp } from '../helpers/helpHttp';
 import CrudForm from "./CrudForm";
 import CrudTable from "./CrudTable";
+import Loaders from './Loaders';
+import Message from './Message';
 
 const CrudApi = () => {
   const [db, setDb] = useState([]);
   const [edit, setEdit] = useState(null);
+
+  let api = helpHttp();
+  let url = "http://localhost:5000/santos";
+
+  useEffect(() => {
+
+    api.get(url).then(res => {
+      if(!res.err){setDb(res)
+      }else{
+        setDb([]);
+      }
+      });
+  },[])
+
+  
 
   const addData = (data) => {
     data.id = Date.now();
@@ -41,7 +59,7 @@ const CrudApi = () => {
           deleteData={deleteData} 
         />
       </article>
-      
+      <Loaders/> <Message/>
     </div>
   );
 }
