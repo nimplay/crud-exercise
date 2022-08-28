@@ -1,0 +1,29 @@
+{
+  "santos":[
+    {
+      "id": 1,
+      "name": "Cella",
+      "constellation": "Pegasus"
+    },
+    {
+      "id": 2,
+      "name": "Shiryu",
+      "constellation": "Dragón"
+    },
+    {
+      "id": 3,
+      "name": "Hyoga",
+      "constellation": "Cisne"
+    },
+    {
+      "id": 4,
+      "name": "Shun",
+      "constellation": "Andrómeda"
+    },
+    {
+      "id": 5,
+      "name": "Ikki",
+      "constellation": "Fenix"
+    }
+  ]
+}
